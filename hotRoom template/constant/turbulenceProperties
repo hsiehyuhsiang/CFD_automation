@@ -1,0 +1,14 @@
+simulationType  RAS;
+RAS
+{
+    RASModel    kEpsilon;
+    turbulence  on;
+    printCoeffs on;
+    Prt         0.85;     
+    thermophysicalTransport
+    {
+        model   thermalDiffusivity;
+        Prt     0.85;
+    }
+}
+}

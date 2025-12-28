@@ -1,0 +1,51 @@
+// 0/U.template - Velocity Vector
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (1.0 0 0);
+
+boundaryField
+{
+    inlet
+    {
+        type            timeVaryingUniformFixedValue;
+        // Placeholder for the (Ux Uy Uz) vector from EPW data
+        uniformValue    INLET_VALUE; 
+        value           $uniformValue;
+    }
+
+    outlet 
+    {
+        type            zeroGradient;
+    }
+
+    walls 
+    {
+        type            fixedValue;
+        value           uniform (0 0 0); // No-slip
+    }
+    
+    floor
+    {
+        type            fixedValue;
+        value           uniform (0 0 0); // No-slip
+    }
+    
+    ceiling 
+    {
+        type            inletOutlet; 
+        inletValue      uniform (0 0 0);
+        value           uniform (0 0 0);
+    }
+    sides 
+    {
+        type            zeroGradient;
+    }
+}

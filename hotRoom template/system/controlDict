@@ -1,0 +1,78 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |
+| \\      /  Field          | OpenFOAM: The Open Source CFD Toolbox
+|  \\    /   Operation      | Website:  https://openfoam.org
+|   \\  /    And            | Version:  8
+|    \\/     Manipulation   |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     buoyantPimpleFoam;
+
+startFrom       firstTime;
+stopAt          endTime;
+
+startTime       0;
+endTime         20;
+
+deltaT          0.02;
+
+adjustTimeStep  yes;
+maxCo           0.5;
+maxDeltaT       0.1;
+
+writeControl    timeStep;
+writeInterval   10;
+
+writeFormat     ascii;
+writePrecision  4;
+writeCompression off;
+
+purgeWrite      0;
+
+timeFormat      general;
+timePrecision   3;
+
+runTimeModifiable true;
+
+functions
+{
+    roomMeanT
+    {
+        type            fieldAverage;
+        libs            ("libfieldFunctionObjects.so");
+        writeControl    timeStep;
+        writeInterval   50;
+        fields
+        (
+            T
+            {
+                mean        on;
+                prime2Mean  off;
+                base        time;
+            }
+        );
+    }
+
+    /*outletFlow
+    {
+        type            surfaceFieldValue;
+        libs            ("libfieldFunctionObjects.so");
+        writeControl    timeStep;
+        writeInterval   50;
+        regionType      patch;
+        name            outlet;
+        operation       sum;
+        fields          (phi);
+    }*/
+}
+
+// ************************************************************************* //

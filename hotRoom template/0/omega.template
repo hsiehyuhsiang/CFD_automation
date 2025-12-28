@@ -1,0 +1,50 @@
+// 0/omega.template - Specific Dissipation Rate
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      omega;
+}
+
+dimensions      [0 0 -1 0 0 0 0];
+
+internalField   uniform 0.1;
+
+boundaryField
+{
+    inlet
+    {
+        type            atmBoundaryLayerInletOmega;
+        // Placeholder for U Magnitude (updates ABL profile)
+        Uref            ABL_U_REF; 
+        Zref            10.0;
+        z0              0.5;
+        value           uniform 0.1;
+    }
+
+    walls
+    {
+        type            omegaWallFunction;
+        value           uniform 0.1;
+    }
+    floor 
+    {
+        type            omegaWallFunction;
+        value           uniform 0.1;
+    }
+    
+    outlet
+    {
+        type            zeroGradient;
+    }
+    ceiling 
+    {
+        type            fixedValue; // Fix omega at atmospheric boundary value
+        value           uniform 0.1;
+    }
+    sides
+    {
+        type            zeroGradient;
+    }
+}

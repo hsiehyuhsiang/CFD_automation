@@ -1,0 +1,5 @@
+thermophysicalTransport
+{
+    model    thermalDiffusivity;
+    Prt     0.85; 
+}

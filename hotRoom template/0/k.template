@@ -1,0 +1,50 @@
+// 0/k.template - Turbulent Kinetic Energy
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      k;
+}
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 1e-4; // Initial TKE value
+
+boundaryField
+{
+    inlet
+    {
+        type            atmBoundaryLayerInletK;
+        // Placeholder for U Magnitude (updates ABL profile)
+        Uref            ABL_U_REF; 
+        Zref            10.0;     
+        z0              0.5;      
+        value           uniform 1e-4;
+    }
+    
+    walls
+    {
+        type            kqRWallFunction;
+        value           uniform 1e-4;
+    }
+    floor 
+    {
+        type            kqRWallFunction;
+        value           uniform 1e-4;
+    }
+    
+    outlet
+    {
+        type            zeroGradient;
+    }
+    ceiling 
+    {
+        type            fixedValue; // Fix TKE at atmospheric boundary value
+        value           uniform 1e-4;
+    }
+    sides
+    {
+        type            zeroGradient;
+    }
+}

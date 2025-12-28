@@ -1,0 +1,47 @@
+// 0/T.template - Temperature (Kelvin)
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      T;
+}
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField   uniform 300; // Initial Ambient Temperature (e.g., 300K)
+
+boundaryField
+{
+    inlet
+    {
+        type            timeVaryingUniformFixedValue;
+        // Placeholder for the current ambient temperature (Kelvin)
+        uniformValue    INLET_TEMP; 
+        value           $uniformValue;
+    }
+
+    walls 
+    {
+        type            zeroGradient; // Adiabatic or zero heat flux
+    }
+    floor
+    {
+        type            fixedValue; 
+        value           uniform 305; // Heat Source Example (e.g., 305K for urban heat island)
+    }
+    
+    outlet
+    {
+        type            zeroGradient;
+    }
+    
+    ceiling 
+    {
+        type            zeroGradient;
+    }
+    sides 
+    {
+        type            zeroGradient;
+    }
+}

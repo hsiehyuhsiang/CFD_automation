@@ -1,0 +1,8 @@
+// constant/RASProperties
+simulationType  RAS;
+
+RAS
+{
+    RASModel        kOmegaSST; 
+    
+}

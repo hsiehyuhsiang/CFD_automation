@@ -1,0 +1,94 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  8
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+/*   Windows 32 and 64 bit porting by blueCAPE: http://www.bluecape.com.pt   *\
+|  Based on Windows porting (2.0.x v4) by Symscape: http://www.symscape.com   |
+\*---------------------------------------------------------------------------*/
+Build  : 8-53cd1468e263
+Exec   : C:/PROGRA~1/BLUECF~1/OpenFOAM-8/platforms/mingw_w64GccDPInt32Opt/bin/checkMesh.exe
+Date   : Nov 17 2025
+Time   : 14:30:35
+Host   : "HARRYSDELL"
+PID    : 29488
+I/O    : uncollated
+Case   : C:/PROGRA~1/BLUECF~1/ofuser-of8/run/hotRoom
+nProcs : 1
+SigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Time = 0
+
+Mesh stats
+    points:           13615
+    faces:            33452
+    internal faces:   28701
+    cells:            9916
+    faces per cell:   6.26795
+    boundary patches: 4
+    point zones:      0
+    face zones:       0
+    cell zones:       0
+
+Overall number of cells of each type:
+    hexahedra:     8967
+    prisms:        9
+    wedges:        0
+    pyramids:      0
+    tet wedges:    0
+    tetrahedra:    0
+    polyhedra:     940
+    Breakdown of polyhedra by number of faces:
+        faces   number of cells
+            4   4
+            5   56
+            6   309
+            9   331
+           12   157
+           15   67
+           18   16
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Number of regions: 1 (OK).
+
+Checking patch topology for multiply connected surfaces...
+                   Patch    Faces   Points                  Surface topology
+                   floor      519      592  ok (non-closed singly connected)
+                 ceiling      496      560  ok (non-closed singly connected)
+                   Walls     2031     2213  ok (non-closed singly connected)
+               buildings     1705     1794  multiply connected (shared edge)
+  <<Writing 2 conflicting points to set nonManifoldPoints
+
+Checking geometry...
+    Overall domain bounding box (-6.06032e-06 -7.48901e-18 -5.84552e-05) (10 5 10)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Boundary openness (-2.70506e-17 1.74812e-16 -3.49761e-17) OK.
+    Max cell openness = 3.26428e-16 OK.
+    Max aspect ratio = 2.78417 OK.
+    Minimum face area = 0.00100399. Maximum face area = 0.250996.  Face area magnitudes OK.
+    Min volume = 0.000349728. Max volume = 0.125485.  Total volume = 498.223.  Cell volumes OK.
+    Mesh non-orthogonality Max: 41.569 average: 10.2617
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 3.90213 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+End
+
