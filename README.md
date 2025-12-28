@@ -23,8 +23,11 @@ The automated workflow follows these steps:
 
 ```text
 CFD_automation/
-├── mesh/              # Mesh generation files
-├── simulation/        # Solver setup and run scripts
-├── post_processing/   # Post-processing scripts
+├── meshes/                     # STL files generated from Grasshopper
+├── hotRoom template/           # OpenFOAM case template
+├── auto.sh                     # Batch CFD automation script
+├── render_streamlines.sh       # Streamline rendering script
+├── auto_temperature.sh         # Temperature post-processing script
+├── snapshot_template_streamline.py
 ├── README.md
 └── LICENSE
