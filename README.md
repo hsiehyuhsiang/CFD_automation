@@ -51,7 +51,7 @@ CFD_automation/
    - Export STL files to the `meshes/` directory
 
 2. Open BlueCFD Shell and navigate to the project directory
-
+  -download at (https://bluecfd.github.io/Core/Downloads/#bluecfd-core-2024-1)
 3. Make scripts executable (first time only)
 ```bash
 chmod +x auto.sh render_streamlines.sh auto_temperature.sh
