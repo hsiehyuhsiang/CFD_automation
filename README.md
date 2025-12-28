@@ -49,7 +49,7 @@ CFD_automation/
 
 1. Generate STL files using Grasshopper  
    - Export STL files to the `meshes/` directory
-
+   - see [GH_voronoiMassing](https://github.com/hsiehyuhsiang/GH_voronoiMassing) for this
 2. Open BlueCFD Shell and navigate to the project directory
   -download at [BlueCFD](https://bluecfd.github.io/Core/Downloads/#bluecfd-core-2024-1)
 3. Make scripts executable (first time only)
