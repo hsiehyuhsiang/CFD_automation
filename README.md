@@ -15,9 +15,9 @@ in a school project setting.
 
 - Windows OS
 - Rhino + Grasshopper (for mesh generation)
-- BlueCFD (OpenFOAM environment)
+- BlueCFD 2020-1-win64(OpenFOAM environment)
 - Bash shell (via BlueCFD)
-- OpenFOAM utilities:
+- OpenFOAM 8 utilities:
   - blockMesh
   - snappyHexMesh
   - checkMesh
